@@ -5,7 +5,6 @@ import SocialButton from './common/SocialButton';
 const titles = [
   'Web Designer',
   'UI / UX Designer'
-  
 ];
 
 const Home = () => {
@@ -18,7 +17,7 @@ const Home = () => {
       setTimeout(() => {
         setTitleIndex((prev) => (prev + 1) % titles.length);
         setIsVisible(true);
-      }, 500); // Wait for fade out before showing next (slightly longer)
+      }, 500);
     }, 3500);
     return () => clearInterval(interval);
   }, []);
@@ -60,9 +59,17 @@ const Home = () => {
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-cyan-400/30 shadow-2xl group transition-all duration-500 hover:scale-105 hover:shadow-cyan-400/40">
+              {/* Animated Glow */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-cyan-400/30 via-blue-400/20 to-transparent blur-2xl opacity-70 z-0 animate-pulse-custom pointer-events-none"></div>
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-cyan-600/20 z-10"></div>
-              <img src="/profile.jpg" alt="Gayani Manesha" className="w-full h-full object-cover" />
+              <img
+                src="/profile.jpg"
+                alt="Gayani Manesha"
+                className="w-full h-full object-cover z-20 relative group-hover:scale-105 transition-transform duration-500 shadow-xl"
+              />
+              {/* Sparkle or highlight */}
+              <div className="absolute bottom-4 right-4 w-10 h-10 bg-cyan-300/40 rounded-full blur-xl opacity-80 pointer-events-none animate-pulse"></div>
             </div>
           </div>
         </div>
