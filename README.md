@@ -14,7 +14,7 @@ It showcases my projects, skills, and contact information.
 - Contact details
 
 ## 🌍 Live Website
-🔗 [Visit My Portfolio](https://your-portfolio-link.com)
+🔗 [Visit My Portfolio]([https://your-portfolio-link.com](https://github.com/GayaniManesha/My-portfolio.git))
 
 ## 📬 Contact Me
 - Email: gayanimanesha@gmail.com
