@@ -19,4 +19,4 @@ It showcases my projects, skills, and contact information.
 
 ## 📬 Contact Me
 - Email: gayanimanesha@gmail.com
-- LinkedIn: [Gayani Manesha](https://www.linkedin.com/in/your-link/)
+- LinkedIn: [Gayani Manesha](www.linkedin.com/in/gayani-jayasundara-4293b9361/)
