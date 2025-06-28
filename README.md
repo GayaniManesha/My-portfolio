@@ -4,9 +4,8 @@ This is my personal portfolio website.
 It showcases my projects, skills, and contact information.
 
 ## 🚀 Built With
-- HTML
-- CSS
-- JavaScript
+- React
+- Tailwind CSS
 
 ## 📍 Features
 - Responsive design
@@ -19,4 +18,6 @@ It showcases my projects, skills, and contact information.
 
 ## 📬 Contact Me
 - Email: gayanimanesha@gmail.com
-- LinkedIn: [Gayani Manesha](www.linkedin.com/in/gayani-jayasundara-4293b9361/)
+- LinkedIn: [Gayani Manesha](https://www.linkedin.com/in/gayani-jayasundara-4293b9361
+
+/)
