@@ -3,7 +3,7 @@ import { GithubIcon, LinkedinIcon, DownloadIcon } from 'lucide-react';
 import SocialButton from './common/SocialButton';
 
 const titles = [
-  'Web Designer',
+  'Web Developer',
   'UI / UX Designer'
 ];
 
@@ -34,8 +34,8 @@ const Home = () => {
               Gayani Manesha
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              I'm{' '}
-              <span className="inline-block min-h-[1em] w-full">
+              I'm a{' '}
+              <span className="inline-block min-h-[2em] w-full leading-[1.3] py-1">
                 {currentTitle.split('').map((letter, index) => (
                   <span
                     key={index}
@@ -54,7 +54,7 @@ const Home = () => {
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <SocialButton icon={<GithubIcon size={20} />} label="GitHub" href="https://github.com/GayaniManesha" professional />
-              <SocialButton icon={<LinkedinIcon size={20} />} label="LinkedIn" href="https://linkedin.com/in/GayaniJayasundara" professional />
+              <SocialButton icon={<LinkedinIcon size={20} />} label="LinkedIn" href="https://www.linkedin.com/in/GayaniJayasundara" professional />
               <SocialButton icon={<DownloadIcon size={20} />} label="Download CV" href="/path-to-your-cv.pdf" primary />
             </div>
           </div>
