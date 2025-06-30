@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionHeader from './common/SectionHeader';
 import SectionContainer from './common/SectionContainer';
 import { MapPinIcon, MailIcon, PhoneIcon, SendIcon } from 'lucide-react';
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbkjlqw"; // Replace with your Formspree form ID
+
 const Contact = () => {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('sending');
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      subject: (form.elements.namedItem('subject') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <SectionContainer dark>
       <SectionHeader title="Contact Me" subtitle="Get in touch for opportunities or collaborations" light />
@@ -58,7 +89,10 @@ const Contact = () => {
         </div>
         {/* Contact Form */}
         <div>
-          <form className="bg-white/10 backdrop-blur-lg p-10 rounded-2xl shadow-2xl border border-indigo-500/10">
+          <form
+            className="bg-white/10 backdrop-blur-lg p-10 rounded-2xl shadow-2xl border border-indigo-500/10"
+            onSubmit={handleSubmit}
+          >
             <div className="space-y-7">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-indigo-200 mb-1">
@@ -67,6 +101,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-indigo-500/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-indigo-300"
                   placeholder="Your name"
                 />
@@ -78,6 +114,8 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-indigo-500/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-indigo-300"
                   placeholder="Your email"
                 />
@@ -89,6 +127,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-indigo-500/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-indigo-300"
                   placeholder="Subject"
                 />
@@ -99,17 +139,31 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-indigo-500/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-white placeholder-indigo-300"
                   placeholder="Your message"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg shadow-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 hover:shadow-indigo-500/30"
+                disabled={status === 'sending'}
+                className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg shadow-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 hover:shadow-indigo-500/30 disabled:opacity-60"
               >
-                Send Message <SendIcon size={18} className="ml-2" />
+                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                <SendIcon size={18} className="ml-2" />
               </button>
+              {status === 'success' && (
+                <div className="text-green-400 text-center font-semibold mt-4">
+                  Thank you! Your message has been sent.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="text-red-400 text-center font-semibold mt-4">
+                  Something went wrong. Please try again later.
+                </div>
+              )}
             </div>
           </form>
         </div>
