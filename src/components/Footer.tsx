@@ -11,10 +11,10 @@ const Footer = () => {
           {/* Socials */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex space-x-3 mb-2">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-indigo-300 hover:bg-white/20 hover:text-white transition-colors duration-300">
+              <a href="https://github.com/gayanimanesha" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-indigo-300 hover:bg-white/20 hover:text-white transition-colors duration-300">
                 <GithubIcon size={18} />
               </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-indigo-300 hover:bg-white/20 hover:text-white transition-colors duration-300">
+              <a href="https://linkedin.com/in/gayanijayasundara" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-indigo-300 hover:bg-white/20 hover:text-white transition-colors duration-300">
                 <LinkedinIcon size={18} />
               </a>
               <a href="mailto:gayanimanesha@gmail.com" className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center text-indigo-300 hover:bg-white/20 hover:text-white transition-colors duration-300">
