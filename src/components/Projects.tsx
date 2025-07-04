@@ -39,6 +39,15 @@ const projects = [
     tags: ['React', 'Tailwind CSS', 'Java Script'],
     link: 'https://travel-app-gray-eight.vercel.app/',
     github: 'https://github.com/GayaniManesha/TravelApp'
+  },
+   {
+    id: 4,
+    title: 'Scientfic Calculator',
+    description: 'SciCalc – Where Simplicity Meets Science',
+    image: 'https://i.postimg.cc/v8j6wNyf/download-14.jpg',
+    tags: ['React', 'Java Script'],
+    link: 'https://scientific-calculator-theta-coral.vercel.app/',
+    github: 'https://github.com/GayaniManesha/scientific-calculator.git'
   }
 ];
 
