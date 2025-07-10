@@ -42,7 +42,7 @@ const projects = [
   },
    {
     id: 4,
-    title: 'Scientific Calculator',
+    title: 'Scientifi Calculator',
     description: 'SciCalc – Where Simplicity Meets Science',
     image: 'https://i.postimg.cc/v8j6wNyf/download-14.jpg',
     tags: ['React', 'Java Script'],
