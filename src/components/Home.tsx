@@ -4,7 +4,9 @@ import SocialButton from './common/SocialButton';
 
 const titles = [
   'Web Developer',
-  'UI / UX Designer'
+  'UI / UX Designer',
+  'Web Designer'
+
 ];
 
 const Home = () => {
