@@ -63,7 +63,7 @@ const Home = () => {
               <SocialButton
                 icon={<LinkedinIcon size={20} />}
                 label="LinkedIn"
-                href="https://www.linkedin.com/in/GayaniJayasundara"
+                href="https://www.linkedin.com/in/gayani-jayasundara-4293b9361"
                 professional
               />
               <a
