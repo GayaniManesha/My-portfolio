@@ -6,7 +6,6 @@ const titles = [
   'Web Developer',
   'UI / UX Designer',
   'Web Designer'
-
 ];
 
 const Home = () => {
@@ -55,9 +54,26 @@ const Home = () => {
               I'm a passionate web designer and front-end developer with a strong focus on UI/UX design. I enjoy crafting responsive websites and creating intuitive mobile app interfaces that deliver great user experiences.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
-              <SocialButton icon={<GithubIcon size={20} />} label="GitHub" href="https://github.com/GayaniManesha" professional />
-              <SocialButton icon={<LinkedinIcon size={20} />} label="LinkedIn" href="https://www.linkedin.com/in/GayaniJayasundara" professional />
-              <SocialButton icon={<DownloadIcon size={20} />} label="Download CV" href="/path-to-your-cv.pdf" primary />
+              <SocialButton
+                icon={<GithubIcon size={20} />}
+                label="GitHub"
+                href="https://github.com/GayaniManesha"
+                professional
+              />
+              <SocialButton
+                icon={<LinkedinIcon size={20} />}
+                label="LinkedIn"
+                href="https://www.linkedin.com/in/GayaniJayasundara"
+                professional
+              />
+              <a
+                href="/Gayani_Jayasundara_CV_2025.pdf"
+                download
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-600 text-white font-semibold shadow hover:bg-cyan-700 transition-colors duration-200"
+              >
+                <DownloadIcon size={20} />
+                Download CV
+              </a>
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
